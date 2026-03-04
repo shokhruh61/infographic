@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infographic Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel input-panel">
+        <h1>Infographic Studio</h1>
+        <p>Turn any topic into a colorful infographic in seconds.</p>
+
+        <label for="topic">Topic or source text</label>
+        <textarea id="topic" placeholder="Paste text with key facts, numbers, or bullet ideas..."></textarea>
+
+        <div class="controls">
+          <button id="generateBtn" class="primary">Generate Infographic</button>
+          <button id="summarizeBtn">Summarize</button>
+          <button id="exportPngBtn">Export PNG</button>
+          <button id="exportSvgBtn">Export SVG</button>
+        </div>
+      </section>
+
+      <section class="panel preview-panel">
+        <div id="infographic" class="infographic" aria-live="polite">
+          <div class="placeholder">
+            <h2>Your infographic will appear here</h2>
+            <p>Include some numbers in your text to auto-generate charts.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <template id="cardTemplate">
+      <article class="card" draggable="true"></article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
