@@ -1,0 +1,189 @@
+:root {
+  --bg: #f4f7ff;
+  --ink: #1f2440;
+  --muted: #6c7494;
+  --card: #ffffff;
+  --accent: #6a5cff;
+  --accent-2: #00c2ff;
+  --accent-3: #ff7d6b;
+  --shadow: 0 18px 40px rgba(41, 52, 98, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(circle at top left, #edf0ff, #fdfdff);
+  color: var(--ink);
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 340px 1fr;
+  padding: 1rem;
+}
+
+.panel {
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.input-panel p {
+  color: var(--muted);
+}
+
+label {
+  font-weight: 700;
+  display: block;
+  margin-top: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+
+textarea {
+  width: 100%;
+  min-height: 220px;
+  border-radius: 12px;
+  border: 1px solid #d9deff;
+  padding: 0.8rem;
+  resize: vertical;
+  font-size: 0.95rem;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 0.65rem 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: #ecefff;
+  color: var(--ink);
+}
+
+button.primary {
+  background: linear-gradient(125deg, var(--accent), #8d7dff);
+  color: #fff;
+  grid-column: 1 / -1;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+.infographic {
+  background: linear-gradient(135deg, #211d45, #4e5bff 45%, #17c0ff);
+  border-radius: 20px;
+  padding: 1rem;
+  min-height: 80vh;
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  align-content: start;
+}
+
+.placeholder {
+  grid-column: 1 / -1;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 0.9rem;
+  box-shadow: 0 10px 18px rgba(31, 36, 64, 0.16);
+  min-height: 140px;
+}
+
+.card.dragging {
+  opacity: 0.45;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.title-card {
+  grid-column: span 4;
+  background: linear-gradient(145deg, #ffffff, #eef2ff);
+}
+
+.icon-card {
+  grid-column: span 2;
+}
+
+.bullets-card {
+  grid-column: span 3;
+}
+
+.chart-card {
+  grid-column: span 3;
+}
+
+.icon-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 1.6rem;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+canvas {
+  width: 100%;
+  height: 220px;
+  background: #f8f9ff;
+  border-radius: 12px;
+}
+
+.drop-target {
+  outline: 2px dashed #fff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 960px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .infographic {
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 680px) {
+  .controls {
+    grid-template-columns: 1fr;
+  }
+
+  .title-card,
+  .icon-card,
+  .bullets-card,
+  .chart-card {
+    grid-column: 1 / -1;
+  }
+}
